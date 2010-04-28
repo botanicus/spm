@@ -120,6 +120,7 @@ exports.commands.install = function install (args) {
         fs.stat(repo.fullpath + "/index.js", function (error, stats) {
           if (error) {
             exports.warn("Project " + repo.basename + " doesn't have index.js");
+            sys.puts("This isn't necessary a bad thing, you just can't require it via " + repo.basename);
           };
         });
       });
