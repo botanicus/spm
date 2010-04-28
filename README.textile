@@ -22,13 +22,6 @@ spm install botanicus/minitest.js
 spm install minitest.js
 </pre>
 
-You can also install projects locally:
-
-<pre>
-spm install minitest.js --local vendor
-spm install minitest.js --local vendor --submodule
-</pre>
-
 h3. Uninstallation
 
 <pre>
