@@ -1,0 +1,58 @@
+h1. About
+
+SPM means *stupid package manager*. It manage packages in the Node.js way: it just put them into @~/.node_libraries@. It use Git or GitHub for installation and it can even search on GitHub via GitHub API.
+
+SPM is totally unobtrusive, it won't ever be required in runtime, it won't think about its own ways how and where should be packages stored, it just use Node.js convention.
+
+h1. Usage
+
+h2. Commands
+
+h3. Installation
+
+<pre>
+# you can install from the full URL
+spm install git://github.com/botanicus/minitest.js.git
+
+# or just by gh_login/project combination
+spm install botanicus/minitest.js
+
+# or even just by project name, in case it's your project
+# and your $USER variable is the same as your GitHub login
+spm install minitest.js
+</pre>
+
+You can also install projects locally:
+
+<pre>
+spm install minitest.js --local vendor
+spm install minitest.js --local vendor --submodule
+</pre>
+
+h3. Uninstallation
+
+<pre>
+spm uninstall minitest.js
+</pre>
+
+h3. Update
+
+<pre>
+# update all packages
+spm update
+
+# update just given package
+spm update minitest.js
+</pre>
+
+h3. List
+
+<pre>
+spm list
+</pre>
+
+h3. Search
+
+<pre>
+spm search minitest.js
+</pre>
