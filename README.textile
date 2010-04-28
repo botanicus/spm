@@ -55,4 +55,5 @@ h3. Search
 
 <pre>
 spm search minitest.js
+spm search minitest.js --raw
 </pre>

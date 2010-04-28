@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var sys = require("sys"),
+    spm = require("./index");
+
+// create ~/.node_libraries if they don't
+// exist and if the installation isn't local
+if (process.argv.indexOf("--local") !== -1) {
+  try {
+    process.chdir("~/.node_libraries");
+  } catch(error) {
+    spm.run("mkdir ~/.node_libraries");
+    process.chdir("~/.node_libraries");
+  };
+};
+
+if (process.argv.length <= 2) {
+  spm.help("You have to provide a command.");
+};
+var command = spm.commands[process.argv[2]];
+
+if (command) {
+  command(process.argv.slice(3));
+} else {
+  spm.help("Command " + process.argv[2] + " doesn't exist.");
+};
